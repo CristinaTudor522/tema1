@@ -2,11 +2,11 @@ function removeOrderItem (orderInfo, position) {
     if (orderInfo != null) {
         //daca items este de tip vector
         if (Array.isArray(orderInfo.items)) {
-            //verific daca fiecare obiect are atat propritatea price cat si quantity
+            //verific daca fiecare obiect are atat propritatea price cat si quantity, in cazul in care nu 
             for (let i=0; i< orderInfo.items.length ; i++) {
                 if (!orderInfo.items[i].hasOwnProperty('price') 
                         || !orderInfo.items[i].hasOwnProperty('quantity')) {
-                    //altfel afisez un mesaj corespunzator
+                    //afisez un mesaj corespunzator
                     throw 'Malformed item';
                 }
             }
